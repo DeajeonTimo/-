@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JDK1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="//192.168.142.3/공유폴더/고급자바 1조 조별과제/json-20231013.jar"/>
+	<classpathentry kind="lib" path="//192.168.142.3/공유폴더/고급자바 1조 조별과제/jackson-databind-2.16.1.jar"/>
+	<classpathentry kind="lib" path="//192.168.142.3/공유폴더/고급자바 1조 조별과제/jackson-core-2.16.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-27/Downloads/gson-2.8.9-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-27/Downloads/gson-2.8.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-27/Downloads/commons-logging-1.1.2.jar"/>
+	<classpathentry kind="lib" path="//192.168.142.3/공유폴더/고급자바 1조 조별과제/pdfbox/fontbox-2.0.30.jar"/>
+	<classpathentry kind="lib" path="//192.168.142.3/공유폴더/고급자바 1조 조별과제/pdfbox/pdfbox-2.0.30.jar"/>
+	<classpathentry kind="lib" path="//192.168.142.3/공유폴더/고급자바 1조 조별과제/pdfbox/pdfbox-app-2.0.30.jar"/>
+	<classpathentry kind="lib" path="//192.168.142.3/공유폴더/고급자바 1조 조별과제/pdfbox/pdfbox-tools-2.0.30.jar"/>
+	<classpathentry kind="lib" path="//192.168.142.3/공유폴더/고급자바 1조 조별과제/pdfbox/preflight-2.0.30.jar"/>
+	<classpathentry kind="lib" path="//192.168.142.3/공유폴더/고급자바 1조 조별과제/pdfbox/preflight-app-2.0.30.jar"/>
+	<classpathentry kind="lib" path="//192.168.142.3/공유폴더/고급자바 1조 조별과제/pdfbox/xmpbox-2.0.30.jar"/>
+	<classpathentry kind="lib" path="//192.168.142.3/공유폴더/고급자바 1조 조별과제/itext/itext-4.2.1.jar"/>
+	<classpathentry kind="lib" path="//192.168.142.3/공유폴더/고급자바 1조 조별과제/itext/itext-asian-5.2.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

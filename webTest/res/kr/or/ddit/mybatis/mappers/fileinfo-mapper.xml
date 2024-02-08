@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="fileinfo">
+	<insert id="insertFileinfo" parameterType="FileInfoVO">
+		insert into fileinfo(FILE_NO,FILE_WRITER,ORIGIN_FILE_NAME,SAVE_FILE_NAME,FILE_SIZE,FILE_DATE)
+		values(FILEINFO_SEQ.nextval, #{file_writer}, #{origin_file_name}, #{save_file_name}, #{file_size}, sysdate)
+	</insert>
+	
+	<select id="getAllFileinfo" resultType="FileInfoVO">
+		select * from fileinfo
+	</select>
+	
+	<select id="getFileinfo" parameterType="int" resultType="FileInfoVO">
+		select * from fileinfo where file_no = #{file_no}
+	</select>
+</mapper>

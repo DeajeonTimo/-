@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 이 문서는 MyBatis에서 처리할 SQL문을 작성하는 문서입니다. -->
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		   
+<!--  mapper태그의 namespace속성값은 이 곳에 작성된 SQL문을 호출해서 사용할 때 사용되는 이름이다. -->		   
+<mapper namespace="jdbc">
+
+	 <!-- 
+	 *id 속성 ==> 실행할 태그를 JAVA소스에서 호출할 때 사용되는 이름으로 <mapper>태그의 namespace속성과 연결해서 사용한다.
+	 			<mapper>태그의 namespace속성과 연결해서 사용한다.
+	 			(예: "lprod.insertLprod")
+	 * parameterType 속성 ==> 작성한 SQL문에 사용될 데이터가 들어있는 객체를 지정한다.(대개 VO클래스, Java의 기본 자료형 이름, Map객체 등이 사용된다)
+	 						(VO클래스 등을 기술할 때는 해당 클래스의 전체 이름을 기술해야 한다.)
+	 						(이 속성에는 <typeAlias>태그에서 지정한 alias속성값을 사용할 수 있다.)
+	 
+	 
+	 
+	 
+	  -->
+	  
+	 <select id="MaxLprod" resultType="int">
+	 	SELECT NVL(MAX(LPROD_ID),0) MAXNUMBER FROM LPROD
+	 </select>
+	 
+	 <select id="CntLpord" parameterType="String" resultType="int">
+	 	SELECT COUNT(*) CNT FROM LPROD WHERE LPROD_GU=#{lprod_gu}
+	 </select>
+	 
+	 <insert id="insertLpord" parameterType="lprodVo">
+	 	insert into lprod(lprod_id, lprod_gu, lprod_nm) values (#{lprod_id},#{lprod_gu},#{lprod_nm})
+	 </insert>
+	 
+	 
+	 
+</mapper>

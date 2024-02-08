@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="board">
+
+<update id ="updatePost" parameterType="Map">
+	insert into jdbc_board (BOARD_NO , BOARD_TITLE , BOARD_WRITER , BOARD_DATE , BOARD_CNT,BOARD_CONTENT) values(board_seq.nextVal, #{postTitle}, #{postWriter}, sysdate , #{postContent} , ?)
+</update>
+
+<select id ="getPostOne" parameterType="int" resultType="boardVo">
+	select * from jdbc_board where BOARD_NO =#{board_no}
+</select>
+
+<update id="updatePostOne" parameterType="Map">
+	update jdbc_board set BOARD_TITLE=#{postTitle} , BOARD_CONTENT=? where BOARD_NO=#{postContent}
+</update>
+
+<delete id="" parameterType="int">
+	delete from jdbc_board where BOARD_NO=#{board_no}
+</delete>
+
+<select id ="getPostByTitle" parameterType="String" resultType="boardVo">
+	select * from jdbc_board where board_title like '%' || ? || '%' order by board_no desc
+</select>
+
+<select id="getAllPost" resultType="boardVo">
+	select * from jdbc_board
+</select>
+
+<update id="updateHits" parameterType="int">
+	update jdbc_board set BOARD_CNT=(select BOARD_CNT from JDBC_BOARD where BOARD_NO=?)+1 where BOARD_NO=#{board_no}
+</update>
+
+</mapper>

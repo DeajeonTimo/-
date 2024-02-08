@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member">
+
+<select id="selectAllMember" resultType="TeamMemberVO">
+	select * from teammember
+</select>
+
+<insert id="insertMember" parameterType="TeamMemberVO">
+	insert into teammember (MEM_ID,MEM_PASS,MEM_NAME,MEM_TEL,MEM_ADDR,MEM_PHOTO)
+					values(#{mem_id},#{mem_pass},#{mem_name},#{mem_tel},#{mem_addr},#{mem_photo})
+</insert>
+
+<select id="selectMember" parameterType="String" resultType="TeamMemberVO">
+	select * from teammember where mem_id = #{data}
+</select>
+
+<select id="selectCountMember" parameterType="String" resultType="int">
+	select count(*) from teammember where mem_id = #{data}
+</select>
+
+<update id="updateMember" parameterType="TeamMemberVO">
+ 	update teammember set mem_pass=#{mem_pass},mem_name=#{mem_name},mem_tel=#{mem_tel},mem_addr=#{mem_addr},mem_photo=#{mem_photo} where mem_id=#{mem_id}
+</update>
+
+<delete id = "deleteMember" parameterType="String">
+	delete from teammember where mem_id=#{mem_id}
+</delete>
+</mapper>
+
